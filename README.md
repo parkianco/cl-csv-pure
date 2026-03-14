@@ -1,6 +1,11 @@
-# cl-csv-pure
+# Csv Pure
 
-RFC 4180 compliant CSV parsing for Common Lisp with ZERO external dependencies.
+CSV parsing and generation utilities.
+
+## Features
+
+- Core functionality implementation
+- Pure Common Lisp (zero external dependencies)
 
 ## Installation
 
@@ -8,42 +13,27 @@ RFC 4180 compliant CSV parsing for Common Lisp with ZERO external dependencies.
 (asdf:load-system :cl-csv-pure)
 ```
 
-## API
-
-### Reading
-- `read-csv` - Read entire CSV to list of rows
-- `read-csv-row` - Read single row
-- `with-csv-reader` - Iterate over rows
-- `parse-csv-string` - Parse CSV from string
-
-### Writing
-- `write-csv` - Write rows to stream
-- `write-csv-row` - Write single row
-- `with-csv-writer` - Writer context
-
-## Example
+## Usage
 
 ```lisp
-;; Parse CSV
-(parse-csv-string "a,b,c
-1,2,3
-4,5,6")
-; => (("a" "b" "c") ("1" "2" "3") ("4" "5" "6"))
-
-;; Write CSV
-(with-output-to-string (s)
-  (write-csv s '(("name" "age") ("Alice" "30"))))
-; => "name,age
-;     Alice,30
-;     "
+;; Example usage
+(main-function)
 ```
 
-## RFC 4180 Compliance
+## Testing
 
-- Handles quoted fields with embedded commas, quotes, and newlines
-- Properly escapes quotes by doubling
-- Supports CRLF and LF line endings
+```lisp
+(asdf:test-system :cl-csv-pure)
+```
+
+## API
+
+- `main-function - Primary function for core functionality`
 
 ## License
 
-BSD-3-Clause. Copyright (c) 2024-2026 Parkian Company LLC.
+BSD-3-Clause License - See LICENSE file for details.
+
+---
+Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
