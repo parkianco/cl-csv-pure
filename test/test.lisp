@@ -2,13 +2,14 @@
 ;; SPDX-License-Identifier: Apache-2.0
 
 (defpackage #:cl-csv-pure.test
-  (:use #:cl)
+  (:use #:cl #:cl-csv-pure)
   (:export #:run-tests))
 
 (in-package #:cl-csv-pure.test)
 
 (defun run-tests ()
-  (format t "Running tests for cl-csv-pure...~%")
-  ;; We verify that the system loads correctly, which is 90% of the battle for these stubs.
-  (assert t)
+  (format t "Executing functional test suite for cl-csv-pure...~%")
+  (assert (equal (deep-copy-list '(1 (2 3) 4)) '(1 (2 3) 4)))
+  (assert (equal (group-by-count '(1 2 3 4 5) 2) '((1 2) (3 4) (5))))
+  (format t "All functional tests passed!~%")
   t)
