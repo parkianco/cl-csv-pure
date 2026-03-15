@@ -8,6 +8,7 @@
   (:use #:cl)
   (:nicknames #:csv-pure)
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
