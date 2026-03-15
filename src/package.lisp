@@ -8,7 +8,11 @@
   (:use #:cl)
   (:nicknames #:csv-pure)
   (:export
-   #:with-csv-pure-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-csv-pure-timing
    #:csv-pure-batch-process
    #:csv-pure-health-check;; Reading
    #:read-csv
