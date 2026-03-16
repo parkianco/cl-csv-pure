@@ -8,6 +8,9 @@
   (:use #:cl)
   (:nicknames #:csv-pure)
   (:export
+   #:initialize-csv-pure
+   #:csv-pure-execute
+   #:csv-pure-context
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
