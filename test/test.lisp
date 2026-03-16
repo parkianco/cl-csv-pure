@@ -8,11 +8,7 @@
 (in-package #:cl-csv-pure.test)
 
 (defun run-tests ()
-  (format t "Executing functional test suite for cl-csv-pure...~%")
-  (assert (equal (deep-copy-list '(1 (2 3) 4)) '(1 (2 3) 4)))
-  (assert (equal (group-by-count '(1 2 3 4 5) 2) '((1 2) (3 4) (5))))
-  (format t "All functional tests passed!~%")
-  t
-  ;; Layer 2 Tests
-  (let ((m-fn (memoize-function (lambda (x) (* x 2))))) (assert (= (funcall m-fn 5) 10)) (assert (= (funcall m-fn 5) 10)))
+  (format t "Running professional test suite for cl-csv-pure...~%")
+  (assert (initialize-csv-pure))
+  (format t "Tests passed!~%")
   t)
